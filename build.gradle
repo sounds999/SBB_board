@@ -1,0 +1,65 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.3.4'
+	id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'com.example'
+version = '0.0.5-SNAPSHOT_test'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+	 sourceCompatibility = '19'
+	// JavaLanguageVersion.of(21) 해당 코드는 명시적으로 java JDK를 지정함
+	// JDK 21을 갖고 있으나 프로젝트는 JDK 17을 사용할 때 해당 코드가 효과적임
+	// javaLanguageVersion이 `17`이고 sourceCompatibility가 `19`면
+	// 17 JDK를 기반으로 컴파일을 하되, 컴파일 하여 얻은 소스 코드가 java 19와 호환되도록 함
+}
+
+repositories {
+	mavenCentral()
+}
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// DevTools 작동이 안된다
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	// lombok (getter, setter annotation을 붙이면 자동으로 관련 method를 생성해준다
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+
+	// H2 경량 db
+	runtimeOnly 'com.h2database:h2'
+
+	// JPA 사용
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	// Junit
+	testImplementation 'org.junit.jupiter:junit-jupiter'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// thymeleaf
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+
+	// validation library
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// spring Security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+
+	implementation 'org.commonmark:commonmark:0.21.0'
+}	
+
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
