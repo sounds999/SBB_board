@@ -21,3 +21,5 @@ https://woonkim.site/question/list
 
 
 (해당 게시판을 만들며 공부한 내용을 정리한 obsidian publish 링크)
+
+https://publish.obsidian.md/codingrecord/%EA%B0%95%EC%9D%98%2C+%ED%94%8C%EC%A0%9D+%EC%A0%95%EB%A6%AC(%EC%9E%A5%EA%B8%B0%EC%A0%81%2C+%EA%B1%B0%EC%8B%9C%EC%A0%81)/do+it+%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B83/3%EC%9E%A5(%EC%84%9C%EB%B9%84%EC%8A%A4+%EA%B0%95%ED%99%94)
